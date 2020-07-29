@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*.js"
+  },
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/mocha": "^8.0.0",
