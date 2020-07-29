@@ -1,13 +1,13 @@
-let cache = [] //缓存初始化
+let cache = [] //初始化
 
 function deepClone(source) {
   //先判断是否是Object类型
   if (source instanceof Object) {
     //判断source是否在缓存里
     let cacheDist = findCache(source)
-    if (cacheDist) {
+    if (cacheDist) {   //有缓存
       return cacheDist
-    } else {
+    } else {       //没缓存
       let dist
       if (source instanceof Array) {
         dist = new Array()
@@ -39,7 +39,7 @@ function deepClone(source) {
 function findCache(source) {
   for (let i = 0; i < cache.length; i++) {
     if (cache[i][0] === source) {
-      return cache[i][1]
+      return cache[i][1]   //对比 source 返回 dist
     }
   }
   return undefined
